@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'Trebuchet MS';
+    src: url('TrebuchetMS-Bold.eot');
+    src: local('Trebuchet MS Bold'), local('TrebuchetMS-Bold'),
+        url('TrebuchetMS-Bold.eot?#iefix') format('embedded-opentype'),
+        url('TrebuchetMS-Bold.woff') format('woff'),
+        url('TrebuchetMS-Bold.woff2') format('woff2'),
+        url('TrebuchetMS-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Trebuchet MS';
+    src: url('TrebuchetMS.eot');
+    src: local('Trebuchet MS'), local('TrebuchetMS'),
+        url('TrebuchetMS.eot?#iefix') format('embedded-opentype'),
+        url('TrebuchetMS.woff') format('woff'),
+        url('TrebuchetMS.woff2') format('woff2'),
+        url('TrebuchetMS.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
