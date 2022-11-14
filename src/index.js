@@ -1,8 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
 import 'react-app-polyfill/ie9';
 import 'react-app-polyfill/ie11';
 import 'react-app-polyfill/stable';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 import { I18nextProvider } from 'react-i18next';
 import App from './App.js';
 import i18n from './i18n.js';

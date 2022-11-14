@@ -7,6 +7,12 @@ $maxWidth: 1440;
  $maxWidth: $maxWidth - 320;
  font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
 }
+@mixin adaptiv-gap($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth: $maxWidth - 320;
+  margin-left: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+  margin-right: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+ }
 
 $cartOfset: 51px;
 $baseColor: #1698D9;
@@ -27,16 +33,24 @@ p {
   margin: 0px;
 }
 .wraper_centor {
-  display: flex;
+  display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flex;
+      display: -o-flex;
+      display: flex;
   align-items: center;
 }
 
 .conteiner{
-  display: flex;
+  display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flex;
+      display: -o-flex;
+      display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 90%;
+  width: 98%;
   margin: auto;
 }
 
@@ -44,6 +58,9 @@ p {
   width: 33%;
   max-width: 320px;
   min-width: 200px;
+  //margin: 80px;
+  margin-top: 25px;
+  @include adaptiv-gap(40,5);
   @media (max-width: 768px ){
     width: calc((100vw - 120px)/ 2);
   }
@@ -127,7 +144,11 @@ p {
 
 .cart__title_conteiner{
   height: 40px;
-  display: flex;
+  display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flex;
+      display: -o-flex;
+      display: flex;
   align-items: flex-end;
   @media (max-width: 1088px ){
     padding-top: 10px;
@@ -277,17 +298,25 @@ text-align: left;
 }
 
 .cartGroup{
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
   display: flex;
   justify-content: center;
-  row-gap: 50px;
-  column-gap: 80px;
-  margin-top: 25px;
+  //row-gap: 50px;
+  //column-gap: 80px;
+  //margin-top: 25px;
   width: 100%;
+  //column-gap: 95px;
+  //margin: -80px;
+  @include adaptiv-gap(-40,-5);
   @media (max-width: 768px) {
     flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
   }
   @media (max-width: 950px ){
-    column-gap: 20px;
+    //column-gap: 20px;
   }
 }
 
