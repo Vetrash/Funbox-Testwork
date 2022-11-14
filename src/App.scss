@@ -1,3 +1,4 @@
+@import '~@csstools/normalize.css';
 @import url("./fonts/Exo/fontExo.css");
 @import url("./fonts/TrebuchetMS/fontTrebushetMS.css");
 
@@ -32,26 +33,20 @@ body {
 p {
   margin: 0px;
 }
-.wraper_centor {
-  display: -webkit-flex;
-      display: -moz-flex;
-      display: -ms-flex;
-      display: -o-flex;
-      display: flex;
-  align-items: center;
+.wraper {
+  min-height: 100vh;
+  height: max-content;
 }
 
 .conteiner{
-  display: -webkit-flex;
-      display: -moz-flex;
-      display: -ms-flex;
-      display: -o-flex;
-      display: flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   width: 98%;
   margin: auto;
+  min-height: 100vh;
+  height: 10px;
 }
 
 .cartConteiner{
@@ -144,10 +139,7 @@ p {
 
 .cart__title_conteiner{
   height: 40px;
-  display: -webkit-flex;
-      display: -moz-flex;
-      display: -ms-flex;
-      display: -o-flex;
+  
       display: flex;
   align-items: flex-end;
   @media (max-width: 1088px ){
@@ -352,8 +344,3 @@ text-align: left;
 .cart__elements_selectetColor{
 color:$selectColor;
 }
-
-.h100{
-  height: 100%;
-}
-
