@@ -235,12 +235,12 @@ p {
 }
 
 .cart__text__count {
-font-family: 'Trebuchet MS';
-font-size: 14px;
-font-weight: 700;
-line-height: 16px;
-letter-spacing: 0px;
-text-align: left;
+  font-family: 'Trebuchet MS';
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0px;
+  text-align: left;
 }
 
 .cart__circle {
@@ -322,15 +322,13 @@ text-align: left;
   font-size: 36px;
   line-height: 43px;
   text-align: center;
-  width: 90%;
+  width: 100%;
   margin-bottom: 25px;
-  margin-left: auto;
-  margin-right: auto;
   color: $whiteColor;
   text-shadow: 0px 1px 1px $blackColor;
-  @media (max-width: 515px ){
+  @media (max-width: 489px ) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
     min-height: 86px;
-  }
+    }
 }
 
 .cart__underText_link {
@@ -349,5 +347,5 @@ text-align: left;
 }
 
 .cart__elements_selectetColor {
-color:$selectColor;
+  color:$selectColor;
 }
