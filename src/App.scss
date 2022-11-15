@@ -3,11 +3,13 @@
 @import url("./fonts/TrebuchetMS/fontTrebushetMS.css");
 
 $maxWidth: 1440;
+
 @mixin adaptiv-font($pcSize, $mobSize) {
  $addSize: $pcSize - $mobSize;
  $maxWidth: $maxWidth - 320;
  font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
 }
+
 @mixin adaptiv-gap($pcSize, $mobSize) {
   $addSize: $pcSize - $mobSize;
   $maxWidth: $maxWidth - 320;
@@ -20,8 +22,10 @@ $baseColor: #1698D9;
 $selectColor: #D91667;
 $grayColor: #B3B3B3;
 $goldColor: #FFFF66;
-$whiteColor: #F2F2F2;
-
+$lightWhiteColor: #F2F2F2;
+$whiteColor: #FFFFFF;
+$blackColor: #000000;
+$darkGrayColor:#666666;
 
 body {
   background: url(./imgs/Pattern.png);
@@ -33,13 +37,13 @@ body {
 p {
   margin: 0px;
 }
-.wraper {
-  min-height: 100vh;
-  height: max-content;
-}
 
-.conteiner{
+.conteiner {
   display: flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -47,14 +51,18 @@ p {
   margin: auto;
   min-height: 100vh;
   height: 10px;
+  height: max-content;
+  height: -moz-max-content;
+  height: -webkit-max-content;
+  height: -o-max-content;
+  height: -ms-max-content;
 }
 
-.cartConteiner{
+.cartConteiner {
   width: 33%;
   max-width: 320px;
   min-width: 200px;
-  //margin: 80px;
-  margin-top: 25px;
+  margin-bottom: 25px;
   @include adaptiv-gap(40,5);
   @media (max-width: 768px ){
     width: calc((100vw - 120px)/ 2);
@@ -69,11 +77,12 @@ p {
   position: relative;
   cursor: pointer;
 }
-.cursor_not{
+
+.cursor_not {
   cursor: not-allowed;
 }
 
-.cart__back{
+.cart__back {
   height: 100%;
   width: 100%;
   border-radius: 12px;
@@ -87,7 +96,7 @@ p {
   z-index: -5;
 }
 
-.cart__back_selected{
+.cart__back_selected {
   background: linear-gradient(135deg, transparent 30px, $selectColor 0) top left,
   linear-gradient(-135deg, $selectColor, $selectColor 0) top right,
   linear-gradient(-45deg,$selectColor, $selectColor 0) bottom right,
@@ -96,7 +105,7 @@ p {
   background-repeat: no-repeat; 
 }
 
-.cart__back_empty{
+.cart__back_empty {
   background: linear-gradient(135deg, transparent 30px, $grayColor 0) top left,
   linear-gradient(-135deg, $grayColor, $grayColor 0) top right,
   linear-gradient(-45deg,$grayColor, $grayColor 0) bottom right,
@@ -112,10 +121,10 @@ p {
   height: calc(100% - 8px);
   width: calc(100% - 8px);
   border-radius: 8px;
-  background: linear-gradient(135deg, transparent 29px, $whiteColor 0) top left,
-  linear-gradient(-135deg, $whiteColor, $whiteColor 0) top right,
-  linear-gradient(-45deg,$whiteColor, $whiteColor 0) bottom right,
-  linear-gradient(45deg, $whiteColor, $whiteColor 0) bottom left;
+  background: linear-gradient(135deg, transparent 29px, $lightWhiteColor 0) top left,
+  linear-gradient(-135deg, $lightWhiteColor, $lightWhiteColor 0) top right,
+  linear-gradient(-45deg,$lightWhiteColor, $lightWhiteColor 0) bottom right,
+  linear-gradient(45deg, $lightWhiteColor, $lightWhiteColor 0) bottom left;
   background-size: 51% 51%;
   background-repeat: no-repeat;
   z-index: -4;
@@ -137,10 +146,13 @@ p {
   }
 }
 
-.cart__title_conteiner{
+.cart__title_conteiner {
   height: 40px;
-  
-      display: flex;
+  display: flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
   align-items: flex-end;
   @media (max-width: 1088px ){
     padding-top: 10px;
@@ -153,7 +165,7 @@ p {
   }
 }
 
-.cart__title{
+.cart__title {
   vertical-align: bottom;
   padding-left: $cartOfset;
   font-family: 'Trebuchet MS';
@@ -161,7 +173,7 @@ p {
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
-  color: #666666;
+  color: $darkGrayColor;
   @media (max-width: 1200px ){
     padding-right: 10px;
   }
@@ -175,7 +187,7 @@ p {
   font-weight: 700;
   font-size: 48px;
   line-height: 56px;
-  color: #000000;
+  color: $blackColor;
   @media (max-width: 1200px ){
     padding-left: $cartOfset;
     @include adaptiv-font(48,24);
@@ -191,17 +203,16 @@ p {
   }
 }
 
-.cart__taste{
+.cart__taste {
   padding-top: 5px;
   padding-left: $cartOfset;
   padding-bottom: 15px;
-  
   font-family: 'Trebuchet MS';
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
   line-height: 28px;
-  color: #000000;
+  color: $blackColor;
   @media (max-width: 1200px ){
     padding-left: $cartOfset;
   }
@@ -210,20 +221,20 @@ p {
   }
 }
 
-.cart__text{
+.cart__text {
   padding-left: $cartOfset;
   font-family: 'Trebuchet MS';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 16px;
-  color: #666666;
+  color: $darkGrayColor;
   @media (max-width: 1200px ){
     padding-left: $cartOfset;
   }
 }
 
-.cart__text__count{
+.cart__text__count {
 font-family: 'Trebuchet MS';
 font-size: 14px;
 font-weight: 700;
@@ -232,7 +243,7 @@ letter-spacing: 0px;
 text-align: left;
 }
 
-.cart__circle{
+.cart__circle {
   position: absolute;
   width: 80px;
   height: 80px;
@@ -242,15 +253,15 @@ text-align: left;
   background: $baseColor;
 }   
 
-.cart__circle_empty{
+.cart__circle_empty {
   background: $grayColor;
 } 
 
-.cart__circle_selected{
+.cart__circle_selected {
   background: $selectColor;
 }
 
-.cart__circle__weight{
+.cart__circle__weight {
   padding-top: 24px;
   font-family: 'Trebuchet MS';
   font-style: normal;
@@ -258,10 +269,10 @@ text-align: left;
   font-size: 42px;
   line-height: 22px;
   text-align: center;
-  color: #FFFFFF;
+  color: $whiteColor;
 }
 
-.cart__circle__weightUnit{
+.cart__circle__weightUnit {
   padding-top: 7px;  
   font-family: 'Trebuchet MS';
   font-style: normal;
@@ -269,10 +280,10 @@ text-align: left;
   font-size: 21px;
   line-height: 22px; 
   text-align: center;
-  color: #FFFFFF;
+  color: $whiteColor;
 }
 
-.cart__underText{
+.cart__underText {
   height: 28px;
   font-family: 'Trebuchet MS';
   font-style: normal;
@@ -280,39 +291,31 @@ text-align: left;
   font-size: 13px;
   line-height: 15px;
   text-align: center;
-  color: #FFFFFF;
+  color: $whiteColor;
   padding-top: 14px;
   width: 100%;
 }
 
-.cart__underText_empty{
+.cart__underText_empty {
   color: $goldColor;
 }
 
-.cartGroup{
+.cartGroup {
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flex;
   display: -o-flex;
   display: flex;
   justify-content: center;
-  //row-gap: 50px;
-  //column-gap: 80px;
-  //margin-top: 25px;
   width: 100%;
-  //column-gap: 95px;
-  //margin: -80px;
   @include adaptiv-gap(-40,-5);
   @media (max-width: 768px) {
     flex-wrap: wrap;
     -ms-flex-wrap: wrap;
   }
-  @media (max-width: 950px ){
-    //column-gap: 20px;
-  }
 }
 
-.mainTitle{
+.mainTitle {
   font-family: 'Exo';
   font-style: normal;
   font-weight: 250;
@@ -320,20 +323,24 @@ text-align: left;
   line-height: 43px;
   text-align: center;
   width: 90%;
+  margin-bottom: 25px;
   margin-left: auto;
   margin-right: auto;
-  color: #FFFFFF;
-  text-shadow: 0px 1px 1px #000000;
+  color: $whiteColor;
+  text-shadow: 0px 1px 1px $blackColor;
+  @media (max-width: 515px ){
+    min-height: 86px;
+  }
 }
 
-.cart__underText_link{
+.cart__underText_link {
   text-decoration:  dashed underline;
   color: $baseColor;
   font-weight: 700;
   cursor: pointer;
 }
 
-.cart__underText_blue{
+.cart__underText_blue {
   color: $baseColor;
 }
 
@@ -341,6 +348,6 @@ text-align: left;
   opacity: 0.5;
 }
 
-.cart__elements_selectetColor{
+.cart__elements_selectetColor {
 color:$selectColor;
 }
